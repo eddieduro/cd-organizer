@@ -33,6 +33,15 @@
     Cd::deleteAll();
     return $app['twig']->render('delete_cds.html.twig');
   });
+
+  $app->get('/search_by_artist', function() use ($app) {
+    return $app['twig']->render('search_by_artist.html.twig');
+  });
+
+  $app->post('/results', function() use ($app) {
+    $current_cd_list = Cd::getAll();
+    return $app['twig']->render('results.html.twig', array('artist_list' => $current_cd_list));
+  });
   $app['debug'] = true;
   return $app;
 ?>
