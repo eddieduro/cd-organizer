@@ -12,16 +12,25 @@
         <h1> your cds: </h1>
           {% for cd in cds %}
             <ul>
-              <li>{{cd.getAlbum}}</li>
+              <li>Album:{{cd.getAlbum}}</li>
+              <li>Artist:{{cd.getArtist}}</li>
             </ul>
           {% endfor %}
         {% else %}
         <h1>Add your CD's to the collection below</h1>
         {% endif %}
-        <a href="/new_cd">Add a new cd!</a>
-        <form action="/delete_cds" method="get">
-          <button type="submit" class="button">Delete</button>
-        </form>
+        <div class="row">
+
+            <a href="/new_cd"><button class="btn col s12">Add CD</button></a>
+
+          <form action="/delete_cds" method="get">
+            <button type="submit" class="btn col s12">Delete</button>
+          </form>
+          <form action="/search_by_artist" method="get">
+            <button type="submit" class="btn col s12">Search</button>
+          </form>
+        </div>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   </body>

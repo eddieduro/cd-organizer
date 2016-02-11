@@ -24,7 +24,7 @@
   });
 
   $app->post('/create_cd', function() use ($app){
-    $album = new Cd($_POST['newCd']);
+    $album = new Cd($_POST['newCd'], $_POST['newArtist'] );
     $album->save();
     return $app['twig']->render('new_cd.html.twig', array('newcd' => $album));
   });

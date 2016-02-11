@@ -4,9 +4,10 @@
     private $album_name;
     private $artist;
 
-    function _construct($album_name)
+    function __construct($album_name, $artist)
     {
       $this->album_name = $album_name;
+      $this->artist = $artist;
     }
 
     function getAlbum()
@@ -16,7 +17,7 @@
 
     function getArtist()
     {
-      return $this->artist_name;
+      return $this->artist;
     }
     function save()
     {
