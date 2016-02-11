@@ -39,8 +39,15 @@
   });
 
   $app->post('/results', function() use ($app) {
-    $current_cd_list = Cd::getAll();
-    return $app['twig']->render('results.html.twig', array('artist_list' => $current_cd_list));
+    $results = array();
+    $searched_artist = strtolower($_POST['artistSearch']);
+
+    foreach($_SESSION['list_of_cds'] as $cd){
+     if(strtolower($cd->getArtist()) == $searched_artist ) {
+       array_push($results, $cd);
+     }
+    }
+    return $app['twig']->render('results.html.twig', array('artist_list' => $results));
   });
   $app['debug'] = true;
   return $app;
