@@ -3,6 +3,7 @@
   {
     private $album_name;
     private $artist;
+    private $image;
 
     function __construct($album_name, $artist)
     {
@@ -18,6 +19,11 @@
     function getArtist()
     {
       return $this->artist;
+    }
+
+    function getCoverArt()
+    {
+      return $this->image;
     }
     function save()
     {

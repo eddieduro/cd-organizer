@@ -10,14 +10,21 @@
     <div class="container">
       <div class="row">
         <form action="/create_cd" method="post">
-          <label for='newCd'>Enter a New Album Name:</label>
-          <input name='newCd' id='newCd' type='text'>
-          <label for='newCd'>Enter a New Artist:</label>
-          <input name='newArtist' id='newArtist' type='text'>
+          <div class="row">
+            <div class="input-field col s6">
+              <label for='newCd'>Enter a New Album Name:</label>
+              <input name='newCd' id='newCd' type='text'>
+            </div>
+            <div class="input-field col s6">
+              <label for='newCd'>Enter a New Artist:</label>
+              <input name='newArtist' id='newArtist' type='text'>
+            </div>
+          </div>
           <button type="submit" class="btn">Create</button>
         </form>
       </div>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   </body>
 </html>
